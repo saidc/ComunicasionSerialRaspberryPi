@@ -1,5 +1,5 @@
 var SerialPort = require("serialport");
-var serialPort = new SerialPort("/dev/ttyAMA0",{
+var serialPort = new SerialPort("/dev/rfcomm0",{
 	baudRate: 9600,
 	dataBits: 8,
 	parity: 'none',
@@ -14,6 +14,7 @@ serialPort.pipe(parser);
 parser.on("data", (data)=>{
 	console.log(data);
 });
+
 async function run(){
 	while(true){
 		var date = new Date().toTimeString();
