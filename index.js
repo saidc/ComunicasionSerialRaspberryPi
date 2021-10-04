@@ -1,8 +1,7 @@
 var OBDReader = require("serial-obd");
 var options = {}
 options.baudRate = 115200;
-//var serialOBDReader = new OBDReader("/dev/rfcomm0", options);
-var serialOBDReader = new OBDReader("/dev/ttyAMA0", options);
+var serialOBDReader = new OBDReader("/dev/rfcomm0", options);
 var dataReceivedMarker = {};
 serialOBDReader.on("dataReceived", (data)=>{
 	console.log(data);
